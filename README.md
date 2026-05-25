@@ -29,3 +29,6 @@ For a longer run:
 python train.py --epochs 10 --train-limit 60000 --test-limit 10000
 python plot.py
 ```
+
+Adam converges faster in the early stage, while SGD is more sensitive to the learning rate.
+Momentum stabilizes the update direction and usually converges faster than vanilla SGD.
