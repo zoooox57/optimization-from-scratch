@@ -1,3 +1,7 @@
+## Motivation
+
+Optimization algorithms are fundamental to deep learning training.
+This project aims to better understand how different optimizers affect convergence behavior and training stability by implementing them from scratch.
 # Optimization from Scratch
 
 This project compares three optimizers implemented from scratch on MNIST:
@@ -30,5 +34,9 @@ python train.py --epochs 10 --train-limit 60000 --test-limit 10000
 python plot.py
 ```
 
-Adam converges faster in the early stage, while SGD is more sensitive to the learning rate.
-Momentum stabilizes the update direction and usually converges faster than vanilla SGD.
+For SGD and Momentum, I use the same learning rate to isolate the effect of the momentum term.
+For Adam, I keep the standard beta values beta1=0.9 and beta2=0.999, because these are part of the Adam algorithm's default design.
+
+In this experiment, SGD with a well-chosen learning rate performs very competitively.
+Adam reduces training loss quickly, but does not always produce the best test accuracy.
+Momentum can improve convergence over vanilla SGD, but its performance depends strongly on the learning rate.
